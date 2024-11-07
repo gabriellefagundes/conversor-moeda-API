@@ -1,4 +1,4 @@
-# Conversor de Moedas
+# Conversor de Moedas 2.0 com API
 
 ## Começando 🚀
 Neste projeto, foi criado um Conversor de Moedas Versão 2.0 com integração de API na seguinte matéria:
