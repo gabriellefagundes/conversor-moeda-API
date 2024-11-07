@@ -7,7 +7,7 @@ async function getExchangeRate(daMoeda, paraMoeda){
         const response = await fetch(`${apiURL}${daMoeda}`);
         const data = response.json();
 
-        if(data.result === "succsess"){
+        if(data.result === "success"){
             return data.conversion_rates[paraMoeda];
         }else{
             throw new Error('Erro ao buscar a taxa de câmbio.');
