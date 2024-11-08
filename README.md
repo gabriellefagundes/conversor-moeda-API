@@ -26,10 +26,10 @@ Este projeto é um Conversor de Moedas que facilita o cálculo de valores conver
 * Em caso de falha, exibe uma mensagem de erro ao usuário.
 
 ## Imagens do projeto.
-![](conversor.png)
- Essa é a tela (única) do projeto.
- ![](conversor.funcionando.png)
- Esse é o conversor funcionando perfeitamente.
+![](conversor.png)   
+    Essa é a tela (única) do projeto.
+ ![](conversor.funcionando.png)    
+    Esse é o conversor funcionando perfeitamente.
 
 ## Técnicas e Tecnologias utilizadas 🔨
 * Visual Studio Code
