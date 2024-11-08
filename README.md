@@ -27,7 +27,7 @@ Este projeto é um Conversor de Moedas que facilita o cálculo de valores conver
 
 ## Imagens do projeto.
 ![](conversor.png)   
-    Essa é a tela (única) do projeto.
+    Essa é a tela (única) do projeto.      
  ![](conversor.funcionando.png)    
     Esse é o conversor funcionando perfeitamente.
 
