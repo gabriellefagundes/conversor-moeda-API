@@ -5,21 +5,31 @@ Neste projeto, foi criado um Conversor de Moedas Versão 2.0 com integração de
 * Programação Web I.
 
 ## Sobre o projeto 📋
-Este projeto é um Conversor de Moedas que facilita o cálculo de valores convertidos em tempo real entre diferentes moedas. Diferente da versão anterior, esta aplicação integra uma API de câmbio, permitindo consultas de taxa de conversão sempre atualizadas e precisas, refletindo as variações do mercado.
+Este projeto é um Conversor de Moedas que facilita o cálculo de valores convertidos em tempo real entre diferentes moedas. Diferente da versão anterior, que foi um [Sistema de Conversor sem uso de API](https://github.com/gabriellefagundes/conversor-moeda), esta aplicação integra uma API de câmbio, permitindo consultas de taxa de conversão sempre atualizadas e precisas, refletindo as variações do mercado.
 
-## Código JavaScript para o Conversor de Moedas
-* **`apiKey`**: Chave exclusiva que verifica a aplicação na API de câmbio, permitindo acesso a taxas de conversão em tempo real.
-* **`apiURL`**: URL base da API para consulta de taxas de câmbio, complementada com o código da moeda que será consultada.
-* A função `getExchangeRate` é assíncrona e realiza uma chamada à API para acessar a taxa de câmbio entre duas moedas.
-* `daMoeda`: Código da moeda de origem (ex.: "USD" para dólares americanos).
-* `paraMoeda`: Código da moeda para a qual o valor será convertido (ex.: "BRL" para reais brasileiros).
-* **`fetch`**: Faz uma requisição para a API com o código da moeda de origem, recebendo uma `Promise` com os dados JSON.
-* **`response.json()`**: Transforma a resposta da API em um objeto JSON.
-* **Verificação de Sucesso**: Verifica se o campo `result` no JSON é `"success"`. Caso contrário, lança um erro.
-* **Retorno da Taxa**: Se a chamada for bem-sucedida, retorna a taxa de conversão entre as moedas especificadas.  
-  **Bloco `catch`**:
-* Captura e exibe no console qualquer erro ocorrido durante a consulta, como falhas de rede ou erros da API.
-* Em caso de erro, retorna `null` para indicar que a conversão não foi possível.
+## Código JavaScript.
+### Estrutura Principal: Chave da API e URL Base
+* A variável apiKey armazena a chave da API necessária para autenticação.
+* apiURL é a URL base da ExchangeRate API, à qual é adicionada a moeda de origem durante a consulta.
+### Função getExchangeRate(daMoeda, paraMoeda)
+* Essa função assíncrona realiza a consulta da taxa de câmbio para a moeda selecionada.
+### Processo:
+* Faz uma requisição fetch para a API, usando a URL e a moeda de origem.
+* A resposta é convertida em JSON, verificando se o resultado foi um sucesso (data.result === "success").
+* Retorna a taxa de câmbio da moeda de origem para a moeda de destino. Se houver um erro, o console exibe a mensagem e a função retorna null.
+### Manipulação do Formulário para Conversão
+* Um listener de evento submit é adicionado ao formulário de conversão de moedas (currency-form). Ao submeter o formulário:
+* Previne o comportamento padrão do formulário com event.preventDefault().
+* Coleta os valores: valor a ser convertido (amount), moeda de origem (from-currency) e moeda de destino (to-currency).
+* Chama getExchangeRate para buscar a taxa de câmbio e, se for bem-sucedido, calcula o valor convertido (valor * exchangeRate).
+* O resultado é exibido no elemento conversao, formatado com duas casas decimais.
+* Em caso de falha, exibe uma mensagem de erro ao usuário.
+
+## Imagens do projeto.
+![](conversor.png)
+ Essa é a tela (única) do projeto.
+ ![](conversor.funcionando.png)
+ Esse é o conversor funcionando perfeitamente.
 
 ## Técnicas e Tecnologias utilizadas 🔨
 * Visual Studio Code
